@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -101,9 +100,9 @@ section{scroll-margin-top:80px;}
   <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-pink-400 glow-text">🛠️ My Skills</h2>
   <div class="flex flex-col items-center gap-6 sm:gap-8">
     <img src="banner.jpg" class="w-65 rounded-lg glow-border float" alt="Banner">
-    <img src="Chessboard.png" class="w-40 rounded-lg glow-border float" alt="Chessboard">
+    <img src="chessboard.png" class="w-40 rounded-lg glow-border float" alt="Chessboard">
     <img src="figma ecommerce.jpg" class="w-40 rounded-lg glow-border float" alt="Figma Ecommerce">
-    <img src="Product Design.png" class="w-40 rounded-lg glow-border float" alt="Product Design">
+    <img src="product Design.png" class="w-40 rounded-lg glow-border float" alt="Product Design">
     <img src="tshirt layout.png" class="w-60 rounded-lg glow-border float" alt="T-shirt Layout">
   </div>
 </section>
@@ -126,7 +125,7 @@ section{scroll-margin-top:80px;}
       </p>
       <div class="mt-4 flex justify-center gap-3">
         <img src="film maker pro.png" class="w-16 h-16 rounded-lg glow-border" alt="Film Maker Pro">
-        <img src="Kinemaster.png" class="w-16 h-16 rounded-lg glow-border" alt="Kinemaster">
+        <img src="kinemaster.png" class="w-16 h-16 rounded-lg glow-border" alt="Kinemaster">
       </div>
     </div>
 
@@ -165,7 +164,7 @@ section{scroll-margin-top:80px;}
   <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
     <img src="canva.jpeg" class="w-20 h-20 rounded-lg glow-border">
     <img src="figma.jpeg" class="w-20 h-20 rounded-lg glow-border">
-    <img src="Adobe photoshop.jpeg" class="w-20 h-20 rounded-lg glow-border">
+    <img src="Adobe Photoshop.jpeg" class="w-20 h-20 rounded-lg glow-border">
     <img src="Adobe premiere.jpeg" class="w-20 h-20 rounded-lg glow-border">
   </div>
 </section>

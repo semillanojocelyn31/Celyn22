@@ -10,7 +10,7 @@
 /* ✨ Body & Background */
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 1;
+  margin: 2;
   color: white;
   overflow-x: hidden;
   min-height: 100vh;

@@ -102,7 +102,7 @@ section{scroll-margin-top:80px;}
     <img src="banner.jpg" class="w-65 rounded-lg glow-border float" alt="Banner">
     <img src="chessboard.png" class="w-40 rounded-lg glow-border float" alt="Chessboard">
     <img src="figma ecommerce.jpg" class="w-40 rounded-lg glow-border float" alt="Figma Ecommerce">
-    <img src="product Design.png" class="w-40 rounded-lg glow-border float" alt="Product Design">
+    <img src="product design.png" class="w-40 rounded-lg glow-border float" alt="Product Design">
     <img src="tshirt layout.png" class="w-60 rounded-lg glow-border float" alt="T-shirt Layout">
   </div>
 </section>

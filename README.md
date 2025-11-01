@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-/* ✨ Body & Background */
+/* 🌌 Base body and background */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -15,74 +16,124 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   background: radial-gradient(circle at top, #2b003a, #0a0015 80%);
+  position: relative;
 }
 
-/* ✨ Animated mist */
+/* ✨ Floating mist & stars */
 @keyframes swirl {0%{background-position:0 0;}100%{background-position:1000px 1000px;}}
 .mist {
   position: fixed;top:0;left:0;width:100%;height:100%;
-  background: radial-gradient(circle, rgba(255,182,193,0.2), transparent 70%), radial-gradient(circle, rgba(255,105,180,0.15), transparent 60%);
+  background: radial-gradient(circle, rgba(255,182,193,0.15), transparent 70%), radial-gradient(circle, rgba(255,105,180,0.1), transparent 60%);
   background-size: 2000px 2000px;
-  animation: swirl 60s linear infinite;
+  animation: swirl 80s linear infinite;
   z-index:-3;pointer-events:none;
 }
+.stars {
+  position: fixed;width:100%;height:100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  opacity: 0.9;mix-blend-mode:screen;z-index:-2;
+}
 
-/* ✨ Stars + sparkles */
-.stars {position:fixed;width:100%;height:100%;background:transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;opacity:.7;z-index:-2;}
-.sparkles {position:fixed;top:0;left:0;width:100%;height:100%;background:transparent url('https://i.ibb.co/8gPswLp/fairy-dust.gif') repeat;background-size:cover;mix-blend-mode:screen;opacity:.3;animation:drift 20s linear infinite;z-index:-1;}
-@keyframes drift{0%{transform:translate(0,0);}50%{transform:translate(-20px,20px);}100%{transform:translate(20px,-20px);}}
+/* 🌠 Floating sparkles */
+.sparkles {
+  position: fixed;top:0;left:0;width:100%;height:100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 2px, transparent 3px);
+  background-size: 100px 100px;
+  animation: sparkleFloat 10s linear infinite;
+  z-index:-1;pointer-events:none;
+}
+@keyframes sparkleFloat {
+  0% {transform:translateY(0);}
+  50% {transform:translateY(-20px);}
+  100% {transform:translateY(0);}
+}
 
-/* ✨ Magical frame */
+/* 🪞 Glowing border frame */
 .magic-frame::before {
-  content:"";position:fixed;top:0;left:0;width:100%;height:100%;
-  border-radius:25px;box-shadow:0 0 40px 10px #ff66cc;
-  animation:pulse 6s ease-in-out infinite alternate;
+  content:"";
+  position: fixed;top:0;left:0;width:100%;height:100%;
+  border-radius: 25px;
+  box-shadow: 0 0 60px 10px rgba(255,105,180,0.8);
+  animation: pulse 4s ease-in-out infinite alternate;
   pointer-events:none;z-index:-1;
 }
-@keyframes pulse{0%{opacity:.7;box-shadow:0 0 20px 5px #ff66cc;}100%{opacity:1;box-shadow:0 0 60px 20px #ff99ff;}}
+@keyframes pulse {
+  0% {opacity:.7; box-shadow:0 0 30px 5px #ff66cc;}
+  100% {opacity:1; box-shadow:0 0 80px 25px #ff99ff;}
+}
 
-/* ✨ Text glow */
-.glow-text{text-shadow:0 0 10px #ff99ff,0 0 20px #ff66cc;}
-.glow-border{box-shadow:0 0 15px 4px #ff66ff;transition:.3s;}
-.glow-border:hover{box-shadow:0 0 30px 10px #ff99ff;transform:scale(1.03);}
+/* 💫 Glow text and elements */
+.glow-text {
+  text-shadow: 0 0 10px #ff99ff, 0 0 25px #ff66cc, 0 0 35px #ffb3ff;
+}
+.glow-border {
+  box-shadow: 0 0 25px 6px rgba(255,105,180,0.7), 0 0 45px 10px rgba(255,182,193,0.5);
+  transition: 0.3s;
+}
+.glow-border:hover {
+  box-shadow: 0 0 40px 12px #ff99ff, 0 0 60px 18px #ffb3ff;
+  transform: scale(1.05);
+}
 
-/* ✨ Floating animation */
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.float{animation:float 6s ease-in-out infinite;}
+/* ✨ Float animation */
+@keyframes float {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+.float {animation: float 6s ease-in-out infinite;}
 
-/* ✨ Pulse text */
-@keyframes pulse-slow{0%,100%{text-shadow:0 0 5px #ff99ff;}50%{text-shadow:0 0 20px #ffccff;}}
-.animate-pulse-slow{animation:pulse-slow 3s ease-in-out infinite;}
+/* 🌸 Soft glowing hover for buttons */
+button:hover {
+  background: linear-gradient(90deg, #ff66cc, #ff99ff);
+  box-shadow: 0 0 25px 6px #ff99ff;
+  transform: scale(1.03);
+}
 
-/* ✨ Scrollbar */
-::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:#ff66ff;border-radius:4px;}
+/* 🌈 Scrollbar */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:#ff66ff;border-radius:4px;}
 section{scroll-margin-top:80px;}
+
+/* 🌷 Section aura */
+section {
+  position: relative;
+}
+section::before {
+  content: "";
+  position: absolute;
+  top:0; left:50%; transform:translateX(-50%);
+  width: 80%;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(255,105,180,0.1), transparent 70%);
+  filter: blur(30px);
+  z-index: -1;
+}
 </style>
 </head>
 
 <body class="relative min-h-screen">
-
 <div class="mist"></div>
 <div class="stars"></div>
 <div class="sparkles"></div>
 <div class="magic-frame"></div>
 
 <!-- 🌙 NAV -->
-<nav class="py-3 px-2 text-center text-white font-bold text-base sm:text-lg flex flex-wrap justify-center gap-4 sticky top-0 z-50 bg-pink-700/40 backdrop-blur-md">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#tutorials">Tutorials</a>
-  <a href="#tools">Tools</a>
-  <a href="#contact">Contact</a>
+<nav class="py-3 px-2 text-center text-white font-bold text-base sm:text-lg flex flex-wrap justify-center gap-4 sticky top-0 z-50 bg-pink-700/30 backdrop-blur-md shadow-lg shadow-pink-500/40">
+  <a href="#home" class="hover:text-pink-300 glow-text">Home</a>
+  <a href="#about" class="hover:text-pink-300 glow-text">About</a>
+  <a href="#skills" class="hover:text-pink-300 glow-text">Skills</a>
+  <a href="#experience" class="hover:text-pink-300 glow-text">Experience</a>
+  <a href="#tutorials" class="hover:text-pink-300 glow-text">Tutorials</a>
+  <a href="#tools" class="hover:text-pink-300 glow-text">Tools</a>
+  <a href="#contact" class="hover:text-pink-300 glow-text">Contact</a>
 </nav>
 
 <!-- 🏰 HOME -->
 <section id="home" class="flex flex-col items-center text-center px-4 py-16 sm:py-20">
-  <h1 class="text-3xl sm:text-5xl font-bold mb-6 glow-text">Welcome to My Enchanted Portfolio!</h1>
+  <h1 class="text-3xl sm:text-5xl font-bold mb-6 glow-text animate-pulse">Welcome to My Enchanted Portfolio!</h1>
   <div class="relative mb-6">
-    <img src="Just me.jpg" alt="Celyn" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-pink-500 object-cover glow-border float">
+    <div class="absolute -inset-2 bg-pink-500/30 blur-xl rounded-full"></div>
+    <img src="Just me.jpg" alt="Celyn" class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-pink-500 object-cover glow-border float">
   </div>
 </section>
 
@@ -91,7 +142,7 @@ section{scroll-margin-top:80px;}
   <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-pink-400 glow-text">✨ About Me ✨</h2>
   <div class="max-w-md sm:max-w-2xl mx-auto text-base sm:text-lg text-gray-200 space-y-4">
     <p>Hi, it’s me <span class="font-bold text-white">Celyn</span>, a passionate <span class="text-pink-400 font-semibold">2nd Year BSIT Student</span>. I love blending creativity and technology to create projects that feel alive and magical.</p>
-    <p> My goal is to use technology to solve real-world problems and create meaningful digital experiences. I’m constantly learning new tools and improving my skills in programming, web development, and creative design software.</p>
+    <p>My goal is to use technology to solve real-world problems and create meaningful digital experiences. I’m constantly learning new tools and improving my skills in programming, web development, and creative design software.</p>
   </div>
 </section>
 
@@ -112,7 +163,6 @@ section{scroll-margin-top:80px;}
   <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-pink-400 glow-text animate-bounce">🏆 My Experience</h2>
   <div class="max-w-md sm:max-w-3xl mx-auto space-y-8">
 
-    <!-- 🎬 PNP Anniversary Contest -->
     <div class="bg-[#1a0033]/70 border border-pink-500 rounded-2xl p-6 glow-border float">
       <h3 class="text-2xl font-semibold text-pink-300 glow-text mb-2">
         Champion in PNP Anniversary Video Editing Contest
@@ -124,12 +174,11 @@ section{scroll-margin-top:80px;}
         <span class="text-pink-400 font-medium">Kinemaster</span>.
       </p>
       <div class="mt-4 flex justify-center gap-3">
-        <img src="film maker pro.png" class="w-16 h-16 rounded-lg glow-border" alt="Film Maker Pro">
-        <img src="Kinemaster.png" class="w-16 h-16 rounded-lg glow-border" alt="Kinemaster">
+        <img src="film maker pro.png" class="w-16 h-16 rounded-lg glow-border">
+        <img src="Kinemaster.png" class="w-16 h-16 rounded-lg glow-border">
       </div>
     </div>
 
-    <!-- 🎨 Tarpapel Editor -->
     <div class="bg-[#1a0033]/70 border border-pink-500 rounded-2xl p-6 glow-border float">
       <h3 class="text-2xl font-semibold text-pink-300 glow-text mb-2">
         Tarpapel Editor in Birthdays
@@ -140,7 +189,7 @@ section{scroll-margin-top:80px;}
         <span class="text-pink-400 font-medium">Canva</span>.
       </p>
       <div class="mt-4 flex justify-center">
-        <img src="canva.jpeg" class="w-16 h-16 rounded-lg glow-border" alt="Canva">
+        <img src="canva.jpeg" class="w-16 h-16 rounded-lg glow-border">
       </div>
     </div>
 
